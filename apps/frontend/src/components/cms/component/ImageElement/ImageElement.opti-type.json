@@ -16,7 +16,7 @@
       "displayName": "Description",
       "description": "",
       "localized": true,
-      "required": false,
+      "required": true,
       "group": "Information",
       "sortOrder": 10,
       "editorSettings": {}

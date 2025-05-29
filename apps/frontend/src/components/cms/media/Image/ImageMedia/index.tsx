@@ -1,10 +1,10 @@
 import { type CmsComponent, CmsEditable } from '@remkoj/optimizely-cms-react/rsc';
-import { ImageMediaComponentDataFragmentDoc, type ImageMediaComponentDataFragment } from "@/gql/graphql";
+import { ImageElementDataFragmentDoc, type ImageElementDataFragment } from "@/gql/graphql";
 import Image from "next/image";
 
-export const ImageMedia : CmsComponent<ImageMediaComponentDataFragment> = ({data, contentLink, ctx}) => {
-    const alt : string = data.alt || data.meta?.name || ""
-    const url : string | null | undefined = data.meta?.url?.default
+export const ImageMedia : CmsComponent<ImageElementDataFragment> = ({data, contentLink, ctx}) => {
+    const alt: string =  ""
+    const url : string | null | undefined = ""
 
     if (!url)
         return null
@@ -13,6 +13,6 @@ export const ImageMedia : CmsComponent<ImageMediaComponentDataFragment> = ({data
         <Image fill src={url} alt={alt} className='object-contain' />
     </CmsEditable>
 }
-ImageMedia.getDataFragment = () => ['ImageMediaComponentData', ImageMediaComponentDataFragmentDoc]
+ImageMedia.getDataFragment = () => ['ImageMediaComponentData', ImageElementDataFragmentDoc]
 
 export default ImageMedia
