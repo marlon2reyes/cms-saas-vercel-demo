@@ -1,0 +1,26 @@
+{
+  "key": "PromoHero",
+  "displayName": "Promo Hero",
+  "description": "Promo Hero that could contains only images",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [
+    "ImageElement"
+  ],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "Title": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Title",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 80
+    }
+  }
+}

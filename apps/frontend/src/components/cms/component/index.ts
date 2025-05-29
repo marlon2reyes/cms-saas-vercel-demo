@@ -1,28 +1,34 @@
 // Auto generated dictionary
 // @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
 import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
+import WebsiteFooterComponent from "./WebsiteFooter";
 import VideoElementComponent from "./VideoElement";
 import TextBlockComponent from "./TextBlock";
 import TestimonialElementComponent from "./TestimonialElement";
+import ShortHeroComponent from "./ShortHero";
 import RichTextElementComponent from "./RichTextElement";
 import QuoteBlockComponent from "./QuoteBlock";
+import PromoHeroComponent from "./PromoHero";
 import ParagraphElementComponent from "./ParagraphElement";
 import PageSeoSettingsComponent from "./PageSeoSettings";
+import OfficeLocationComponent from "./OfficeLocation";
 import OdpEmbedBlockComponent from "./OdpEmbedBlock";
+import NavigationMenuBlockComponent from "./NavigationMenuBlock";
 import MenuNavigationBlockComponent from "./MenuNavigationBlock";
-import MegaMenuGroupBlockMobileComponent from "./MegaMenuGroupBlock/mobile";
 import MegaMenuGroupBlockComponent from "./MegaMenuGroupBlock";
 import LayoutSettingsBlockComponent from "./LayoutSettingsBlock";
 import ImageElementComponent from "./ImageElement";
 import HeroBlockComponent from "./HeroBlock";
 import HeadingElementComponent from "./HeadingElement";
-import CTAElementComponent from "./CTAElement";
-import ContinueReadingComponentComponent from "./ContinueReadingComponent";
+import HeaderBlockComponent from "./HeaderBlock";
+import DictionaryItemComponent from "./DictionaryItem";
+import DictionaryComponent from "./Dictionary";
 import ContentRecsElementComponent from "./ContentRecsElement";
 import CarouselBlockComponent from "./CarouselBlock";
+import CardBlockComponent from "./CardBlock";
+import CTAElementComponent from "./CTAElement";
 import ButtonBlockComponent from "./ButtonBlock";
 import ArticleListElementComponent from "./ArticleListElement";
-import ArticleListElementLoader from "./ArticleListElement/loading";
 import ComponentPageFactory from "./Page";
 
 // Prefix entries - if needed
@@ -30,6 +36,10 @@ prefixDictionaryEntries(ComponentPageFactory, "Page");
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
+    { 
+        type: "WebsiteFooter", 
+        component: WebsiteFooterComponent 
+    },
     { 
         type: "VideoElement", 
         component: VideoElementComponent 
@@ -43,12 +53,20 @@ export const ComponentFactory : ComponentTypeDictionary = [
         component: TestimonialElementComponent 
     },
     { 
+        type: "ShortHero", 
+        component: ShortHeroComponent 
+    },
+    { 
         type: "RichTextElement", 
         component: RichTextElementComponent 
     },
     { 
         type: "QuoteBlock", 
         component: QuoteBlockComponent 
+    },
+    { 
+        type: "PromoHero", 
+        component: PromoHeroComponent 
     },
     { 
         type: "ParagraphElement", 
@@ -59,16 +77,20 @@ export const ComponentFactory : ComponentTypeDictionary = [
         component: PageSeoSettingsComponent 
     },
     { 
+        type: "OfficeLocation", 
+        component: OfficeLocationComponent 
+    },
+    { 
         type: "OdpEmbedBlock", 
         component: OdpEmbedBlockComponent 
     },
     { 
-        type: "MenuNavigationBlock", 
-        component: MenuNavigationBlockComponent 
+        type: "NavigationMenuBlock", 
+        component: NavigationMenuBlockComponent 
     },
     { 
-        type: "MegaMenuGroupBlock/mobile", 
-        component: MegaMenuGroupBlockMobileComponent 
+        type: "MenuNavigationBlock", 
+        component: MenuNavigationBlockComponent 
     },
     { 
         type: "MegaMenuGroupBlock", 
@@ -91,12 +113,16 @@ export const ComponentFactory : ComponentTypeDictionary = [
         component: HeadingElementComponent 
     },
     { 
-        type: "CTAElement", 
-        component: CTAElementComponent 
+        type: "HeaderBlock", 
+        component: HeaderBlockComponent 
     },
     { 
-        type: "ContinueReadingComponent", 
-        component: ContinueReadingComponentComponent 
+        type: "DictionaryItem", 
+        component: DictionaryItemComponent 
+    },
+    { 
+        type: "Dictionary", 
+        component: DictionaryComponent 
     },
     { 
         type: "ContentRecsElement", 
@@ -107,14 +133,20 @@ export const ComponentFactory : ComponentTypeDictionary = [
         component: CarouselBlockComponent 
     },
     { 
+        type: "CardBlock", 
+        component: CardBlockComponent 
+    },
+    { 
+        type: "CTAElement", 
+        component: CTAElementComponent 
+    },
+    { 
         type: "ButtonBlock", 
         component: ButtonBlockComponent 
     },
     { 
         type: "ArticleListElement", 
-        component: ArticleListElementComponent,
-        useSuspense: true,
-        loader: ArticleListElementLoader
+        component: ArticleListElementComponent 
     },
     ...ComponentPageFactory
 ];

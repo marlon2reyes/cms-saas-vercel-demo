@@ -1,24 +1,27 @@
 {
   "key": "BlankExperience",
   "displayName": "Blank Experience",
-  "description": "An experience without a predefined layout.",
+  "description": "An experience without a predefined layout. ",
   "baseType": "experience",
   "sortOrder": 0,
   "mayContainTypes": [
-    "*"
+    "BlankExperience",
+    "ArticleGroupPage",
+    "ArticlePage"
   ],
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
+  "lastModifiedBy": "",
   "properties": {
-    "BlankExperienceSeoSettings": {
+    "SeoSettings": {
       "type": "component",
       "contentType": "PageSeoSettings",
-      "displayName": "SEO settings",
+      "displayName": "SEO Settings",
       "description": "",
       "localized": false,
       "required": false,
-      "group": "SeoSettings",
-      "sortOrder": 10,
+      "group": "SeoData",
+      "sortOrder": 1000,
       "editorSettings": {}
     }
   }

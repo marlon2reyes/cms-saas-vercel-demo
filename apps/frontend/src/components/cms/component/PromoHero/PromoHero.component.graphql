@@ -1,0 +1,3 @@
+fragment PromoHeroData on PromoHero {
+  Title
+}

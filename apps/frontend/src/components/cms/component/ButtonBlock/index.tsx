@@ -1,54 +1,19 @@
-import { type ComponentProps, type FunctionComponent } from "react"
-import { type CmsComponent, type WithGqlFragment } from "@remkoj/optimizely-cms-react"
-import { ButtonBlockDataFragmentDoc, type ButtonBlockDataFragment, LinkDataFragmentDoc } from "@/gql/graphql"
-import { getFragmentData } from "@gql/fragment-masking"
-import Link from 'next/link'
-import { urlToRelative } from '@components/shared/cms_link'
-import { Button } from "@components/shared/button"
-
-type ButtonBlockProps = ComponentProps<CmsComponent<ButtonBlockDataFragment>>
-type ButtonBlockComponent = CmsComponent<ButtonBlockDataFragment> extends WithGqlFragment<any, ButtonBlockDataFragment> ? 
-    WithGqlFragment<FunctionComponent<ButtonBlockProps & Omit<ComponentProps<typeof Link>, 'className'> & Omit<ButtonBlockDataFragment, 'children' | '__typename'>>, ButtonBlockDataFragment> : never
+import { type CmsComponent } from "@remkoj/optimizely-cms-react";
+import { ButtonBlockDataFragmentDoc, type ButtonBlockDataFragment } from "@/gql/graphql";
 
 /**
  * Button
- * Represents an instance of a button
+ * Button element for inclusion in other blocks/pages
  */
-export const ButtonBlockComponent : ButtonBlockComponent = ({ 
-    // Allow to be used as regular CMS Component
-    data: { 
-        url: configuredUrlFragment, 
-        buttonType: configuredButtonType,
-        buttonVariant: configuredButtonVariant, 
-        className: configuredClassName, 
-        children: text 
-    } = {}, 
-    inEditMode, 
-    layoutProps, 
-    contentLink,
-
-    // Allow fragment to be spread on the ButtonBlock
-    url: providedUrlFragment, 
-    className: providedClassName,
-    buttonType: providedButtonType,
-    buttonVariant: providedButtonVariant,
-    
-    // Allow to be used as a Next.JS Link
-    ctx, // Extract context to prevent passing through
-    href,
-    children,
-    ...props 
-}) => {
-
-    // Unmask fragment
-    const url = getFragmentData(LinkDataFragmentDoc, configuredUrlFragment || providedUrlFragment)
-    const buttonType = (configuredButtonType || providedButtonType || undefined) as 'primary' | 'secondary' | undefined
-    const buttonVariant = (configuredButtonVariant || providedButtonVariant || undefined) as 'default' | 'cta' | undefined
-
-    const linkHref = url?.default ?? href.toString() ?? '#'
-    const className = `${ providedClassName ?? '' } ${ configuredClassName ?? ''}`.trim()
-
-    return <Button { ...props } url={ linkHref || "#"} buttonColor="default" buttonType={buttonType} buttonVariant={ buttonVariant } className={ className }>{ text ?? children }</Button>
+export const ButtonBlockComponent : CmsComponent<ButtonBlockDataFragment> = ({ data, children }) => {
+    const componentName = 'Button'
+    const componentInfo = 'Button element for inclusion in other blocks/pages'
+    return <div className="w-full border-y border-y-solid border-y-slate-900 py-2 mb-4">
+        <div className="font-bold italic">{ componentName }</div>
+        <div>{ componentInfo }</div>
+        { Object.getOwnPropertyNames(data).length > 0 && <pre className="w-full overflow-x-hidden font-mono text-sm bg-slate-200 p-2 rounded-sm border border-solid border-slate-900 text-slate-900">{ JSON.stringify(data, undefined, 4) }</pre> }
+        { children && <div className="mt-4 mx-4 flex flex-col">{ children }</div>}
+    </div>
 }
 ButtonBlockComponent.displayName = "Button (Component/ButtonBlock)"
 ButtonBlockComponent.getDataFragment = () => ['ButtonBlockData', ButtonBlockDataFragmentDoc]

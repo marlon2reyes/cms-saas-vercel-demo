@@ -1,9 +1,9 @@
 {
   "key": "MegaMenuGroupBlock",
-  "displayName": "Header menu item",
-  "description": "A menu item for the Header Menu",
+  "displayName": "Mega menu group",
+  "description": "",
   "baseType": "component",
-  "sortOrder": 15100,
+  "sortOrder": 100,
   "mayContainTypes": [],
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
@@ -41,9 +41,8 @@
       "items": {
         "type": "content",
         "allowedTypes": [
-          "CardBlock",
-          "MenuNavigationBlock",
-          "BlogPostPage"
+          "NavigationMenuBlock",
+          "CardBlock"
         ],
         "restrictedTypes": []
       }

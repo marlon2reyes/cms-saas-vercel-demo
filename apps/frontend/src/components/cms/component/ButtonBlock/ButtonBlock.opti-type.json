@@ -1,54 +1,54 @@
 {
   "key": "ButtonBlock",
   "displayName": "Button",
-  "description": "Represents an instance of a button",
+  "description": "Button element for inclusion in other blocks/pages",
   "baseType": "component",
   "sortOrder": 100,
   "mayContainTypes": [],
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
   "properties": {
-    "ButtonText": {
+    "text": {
       "type": "string",
       "format": "shortString",
       "displayName": "Text",
-      "description": "The text of the button",
-      "localized": true,
+      "description": "",
+      "localized": false,
       "required": false,
       "group": "Information",
-      "sortOrder": 10,
+      "sortOrder": 0,
       "editorSettings": {}
     },
-    "ButtonUrl": {
+    "link": {
       "type": "url",
       "displayName": "Link",
       "description": "",
       "localized": false,
       "required": false,
       "group": "Information",
-      "sortOrder": 15,
+      "sortOrder": 0,
       "editorSettings": {}
     },
-    "ButtonClass": {
+    "className": {
       "type": "string",
       "format": "shortString",
-      "displayName": "Class name",
-      "description": "The css class for adding custom styles too",
+      "displayName": "CSS Classes",
+      "description": "Additional CSS Classes for the button",
       "localized": false,
       "required": false,
-      "group": "Information",
-      "sortOrder": 20,
+      "group": "RenderSettings",
+      "sortOrder": 100,
       "editorSettings": {}
     },
-    "ButtonType": {
+    "buttonType": {
       "type": "string",
       "format": "selectOne",
-      "displayName": "Button type",
-      "description": "The type of button to display",
+      "displayName": "Button Type",
+      "description": "",
       "localized": false,
-      "required": true,
-      "group": "Information",
-      "sortOrder": 30,
+      "required": false,
+      "group": "RenderSettings",
+      "sortOrder": 150,
       "editorSettings": {},
       "enum": {
         "values": [
@@ -63,28 +63,16 @@
         ]
       }
     },
-    "ButtonVariant": {
+    "variant": {
       "type": "string",
       "format": "selectOne",
       "displayName": "Variant",
-      "description": "The type of button to display",
+      "description": "",
       "localized": false,
-      "required": true,
-      "group": "Information",
-      "sortOrder": 40,
-      "editorSettings": {},
-      "enum": {
-        "values": [
-          {
-            "displayName": "Default",
-            "value": "default"
-          },
-          {
-            "displayName": "CTA",
-            "value": "cta"
-          }
-        ]
-      }
+      "required": false,
+      "group": "RenderSettings",
+      "sortOrder": 200,
+      "editorSettings": {}
     }
   }
 }
