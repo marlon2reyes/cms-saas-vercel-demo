@@ -1,31 +1,17 @@
-import { type NextRequest, NextResponse } from 'next/server'
-import { getArticles, type Types } from '@/lib/api/articles'
+import createPublishApi from '@remkoj/optimizely-cms-nextjs/publish'
 
-async function handler(req: NextRequest) : Promise<NextResponse<Types.getArticlesApiResponse>>
-{
-    const locale = req.nextUrl.searchParams.get("locale")
-    const author = req.nextUrl.searchParams.get("author")
-    const published = req.nextUrl.searchParams.get("published")
-    const pageSize = parseInt(req.nextUrl.searchParams.get("pageSize") ?? "-", 10)
-    const pageNumber = parseInt(req.nextUrl.searchParams.get("page") ?? "-", 10)
+const publishApi = createPublishApi({ 
+    optimizePublish: true, //Only publish the actual content item
+    additionalPaths: ['/sitemap.xml','/robots.txt'] // Always ensure that the sitemap.xml & robots.txt are up-to-date
+})
 
-    if (!locale)
-        return NextResponse.json({error: "Bad request"}, { status: 400 })
+// Configure the Next.JS route handling for the pages
+export const dynamic = 'force-dynamic'      // Make sure all API-Requests are executed
+export const dynamicParams = true           // Make sure all matching routes are always executed
+export const revalidate = 0                 // Don't cache
+export const fetchCache = 'force-no-store'  // Don't cache
+export const runtime = 'nodejs'             // Run at the edge
 
-    const paging : Types.PagingData = {
-        count: isNaN(pageSize) || pageSize == 0 ? 12 : pageSize,
-        page: isNaN(pageNumber) || pageNumber == 0 ? 1 : pageNumber
-    }
-    const filters : Types.Filters = {
-        author: author ?? undefined,
-        published: published ?? undefined
-    }
-
-    return NextResponse.json(await getArticles(locale, paging, filters))
-}
-
-export const GET = handler
-export const runtime = 'edge' // 'nodejs' (default) | 'edge'
-export const dynamic = 'force-dynamic'
-export const dynamicParams = true
-export const fetchCache = 'default-no-store'
+// Export API Handler
+export const GET = publishApi // Allow direct invocation in browser
+export const POST = publishApi // Used by Optimizely Graph
