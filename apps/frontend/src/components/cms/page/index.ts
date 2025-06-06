@@ -2,6 +2,7 @@
 // @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
 import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import TestingPageComponent from "./TestingPage";
+import EventPageComponent from "./EventPage";
 import ArticlePageComponent from "./ArticlePage";
 import ArticleGroupPageComponent from "./ArticleGroupPage";
 
@@ -10,6 +11,10 @@ export const PageFactory : ComponentTypeDictionary = [
     { 
         type: "TestingPage", 
         component: TestingPageComponent 
+    },
+    { 
+        type: "EventPage", 
+        component: EventPageComponent 
     },
     { 
         type: "ArticlePage", 

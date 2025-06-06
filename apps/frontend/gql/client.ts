@@ -415,6 +415,11 @@ export const ArticlePageDataFragmentDoc = gql`
   }
 }
     `;
+export const EventPageDataFragmentDoc = gql`
+    fragment EventPageData on EventPage {
+  Title
+}
+    `;
 export const TestingPageDataFragmentDoc = gql`
     fragment TestingPageData on TestingPage {
   articleSeoSettings {
@@ -566,6 +571,7 @@ export const getContentByIdDocument = gql`
       ...BlankExperienceData
       ...ArticleGroupPageData
       ...ArticlePageData
+      ...EventPageData
       ...TestingPageData
     }
   }
@@ -609,6 +615,7 @@ ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
+${EventPageDataFragmentDoc}
 ${TestingPageDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
     query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String) {
@@ -623,6 +630,7 @@ export const getContentByPathDocument = gql`
       ...BlankExperienceData
       ...ArticleGroupPageData
       ...ArticlePageData
+      ...EventPageData
       ...TestingPageData
     }
   }
@@ -666,6 +674,7 @@ ${NavigationMenuBlockPropertyDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
+${EventPageDataFragmentDoc}
 ${TestingPageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String, $domain: String) {

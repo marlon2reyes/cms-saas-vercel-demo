@@ -39,6 +39,7 @@ type Documents = {
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": typeof types.ArticleGroupPageDataFragmentDoc,
     "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": typeof types.ArticlePageDataFragmentDoc,
+    "fragment EventPageData on EventPage {\n  Title\n}": typeof types.EventPageDataFragmentDoc,
     "fragment TestingPageData on TestingPage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": typeof types.TestingPageDataFragmentDoc,
     "fragment BlankSectionData on BlankSection {\n  _metadata {\n    key\n  }\n}": typeof types.BlankSectionDataFragmentDoc,
     "query getLocales {\n  schema: __schema {\n    types {\n      kind\n      name\n      enumValues {\n        name\n      }\n    }\n  }\n}": typeof types.getLocalesDocument,
@@ -73,6 +74,7 @@ const documents: Documents = {
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
     "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.ArticlePageDataFragmentDoc,
+    "fragment EventPageData on EventPage {\n  Title\n}": types.EventPageDataFragmentDoc,
     "fragment TestingPageData on TestingPage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.TestingPageDataFragmentDoc,
     "fragment BlankSectionData on BlankSection {\n  _metadata {\n    key\n  }\n}": types.BlankSectionDataFragmentDoc,
     "query getLocales {\n  schema: __schema {\n    types {\n      kind\n      name\n      enumValues {\n        name\n      }\n    }\n  }\n}": types.getLocalesDocument,
@@ -196,6 +198,10 @@ export function gql(source: "fragment ArticleGroupPageData on ArticleGroupPage {
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment EventPageData on EventPage {\n  Title\n}"): (typeof documents)["fragment EventPageData on EventPage {\n  Title\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
