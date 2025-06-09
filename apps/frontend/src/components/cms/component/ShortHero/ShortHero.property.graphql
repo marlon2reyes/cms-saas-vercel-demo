@@ -1,0 +1,4 @@
+fragment ShortHeroPropertyData on ShortHeroProperty {
+  Title
+  Image { ...ReferenceData }
+}

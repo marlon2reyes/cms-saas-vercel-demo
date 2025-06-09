@@ -361,6 +361,25 @@ export const BlankExperienceDataFragmentDoc = gql`
   ...ExperienceData
 }
     `;
+export const ParagraphElementPropertyDataFragmentDoc = gql`
+    fragment ParagraphElementPropertyData on ParagraphElementProperty {
+  text {
+    json
+    html
+  }
+}
+    `;
+export const EventExperienceDataFragmentDoc = gql`
+    fragment EventExperienceData on EventExperience {
+  title {
+    ...ParagraphElementPropertyData
+  }
+  SeoSettings {
+    ...PageSeoSettingsPropertyData
+  }
+  ...ExperienceData
+}
+    `;
 export const ArticleGroupPageDataFragmentDoc = gql`
     fragment ArticleGroupPageData on ArticleGroupPage {
   LandingPageSeoSettings {
@@ -569,6 +588,7 @@ export const getContentByIdDocument = gql`
       ...WebsiteFooterData
       ...BlankSectionData
       ...BlankExperienceData
+      ...EventExperienceData
       ...ArticleGroupPageData
       ...ArticlePageData
       ...EventPageData
@@ -613,6 +633,8 @@ ${CompositionNodeDataFragmentDoc}
 ${CompositionComponentNodeDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
+${EventExperienceDataFragmentDoc}
+${ParagraphElementPropertyDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
 ${EventPageDataFragmentDoc}
@@ -628,6 +650,7 @@ export const getContentByPathDocument = gql`
       ...IContentData
       ...PageData
       ...BlankExperienceData
+      ...EventExperienceData
       ...ArticleGroupPageData
       ...ArticlePageData
       ...EventPageData
@@ -672,6 +695,8 @@ ${TestimonialElementDataFragmentDoc}
 ${WebsiteFooterDataFragmentDoc}
 ${NavigationMenuBlockPropertyDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
+${EventExperienceDataFragmentDoc}
+${ParagraphElementPropertyDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
 ${EventPageDataFragmentDoc}

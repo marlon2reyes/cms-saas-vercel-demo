@@ -32,11 +32,13 @@ type Documents = {
     "fragment PageSeoSettingsData on PageSeoSettings {\n  metaTitle\n}": typeof types.PageSeoSettingsDataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  metaTitle\n}": typeof types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}": typeof types.ParagraphElementDataFragmentDoc,
+    "fragment ParagraphElementPropertyData on ParagraphElementProperty {\n  text {\n    json\n    html\n  }\n}": typeof types.ParagraphElementPropertyDataFragmentDoc,
     "fragment PromoHeroData on PromoHero {\n  Title\n}": typeof types.PromoHeroDataFragmentDoc,
     "fragment ShortHeroData on ShortHero {\n  Title\n  Image {\n    ...ReferenceData\n  }\n}": typeof types.ShortHeroDataFragmentDoc,
     "fragment TestimonialElementData on TestimonialElement {\n  customerName\n  customerLocation\n  customerImage {\n    ...ReferenceData\n  }\n  referenceTitle\n  referenceText {\n    json\n  }\n}": typeof types.TestimonialElementDataFragmentDoc,
     "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}": typeof types.WebsiteFooterDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
+    "fragment EventExperienceData on EventExperience {\n  title {\n    ...ParagraphElementPropertyData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": typeof types.ArticleGroupPageDataFragmentDoc,
     "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": typeof types.ArticlePageDataFragmentDoc,
     "fragment EventPageData on EventPage {\n  Title\n}": typeof types.EventPageDataFragmentDoc,
@@ -67,11 +69,13 @@ const documents: Documents = {
     "fragment PageSeoSettingsData on PageSeoSettings {\n  metaTitle\n}": types.PageSeoSettingsDataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  metaTitle\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}": types.ParagraphElementDataFragmentDoc,
+    "fragment ParagraphElementPropertyData on ParagraphElementProperty {\n  text {\n    json\n    html\n  }\n}": types.ParagraphElementPropertyDataFragmentDoc,
     "fragment PromoHeroData on PromoHero {\n  Title\n}": types.PromoHeroDataFragmentDoc,
     "fragment ShortHeroData on ShortHero {\n  Title\n  Image {\n    ...ReferenceData\n  }\n}": types.ShortHeroDataFragmentDoc,
     "fragment TestimonialElementData on TestimonialElement {\n  customerName\n  customerLocation\n  customerImage {\n    ...ReferenceData\n  }\n  referenceTitle\n  referenceText {\n    json\n  }\n}": types.TestimonialElementDataFragmentDoc,
     "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}": types.WebsiteFooterDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
+    "fragment EventExperienceData on EventExperience {\n  title {\n    ...ParagraphElementPropertyData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
     "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.ArticlePageDataFragmentDoc,
     "fragment EventPageData on EventPage {\n  Title\n}": types.EventPageDataFragmentDoc,
@@ -173,6 +177,10 @@ export function gql(source: "fragment ParagraphElementData on ParagraphElement {
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment ParagraphElementPropertyData on ParagraphElementProperty {\n  text {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ParagraphElementPropertyData on ParagraphElementProperty {\n  text {\n    json\n    html\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment PromoHeroData on PromoHero {\n  Title\n}"): (typeof documents)["fragment PromoHeroData on PromoHero {\n  Title\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -190,6 +198,10 @@ export function gql(source: "fragment WebsiteFooterData on WebsiteFooter {\n  Fo
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"): (typeof documents)["fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment EventExperienceData on EventExperience {\n  title {\n    ...ParagraphElementPropertyData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"): (typeof documents)["fragment EventExperienceData on EventExperience {\n  title {\n    ...ParagraphElementPropertyData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

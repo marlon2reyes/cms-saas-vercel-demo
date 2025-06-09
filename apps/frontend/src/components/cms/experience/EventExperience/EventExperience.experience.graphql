@@ -1,0 +1,5 @@
+fragment EventExperienceData on EventExperience {
+  title { ...ParagraphElementPropertyData }
+  SeoSettings { ...PageSeoSettingsPropertyData }
+  ...ExperienceData
+}

@@ -1,0 +1,3 @@
+fragment ParagraphElementPropertyData on ParagraphElementProperty {
+  text { json, html }
+}
