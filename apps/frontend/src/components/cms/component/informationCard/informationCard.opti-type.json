@@ -1,0 +1,45 @@
+{
+  "key": "informationCard",
+  "displayName": "Information Card Component",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "date": {
+      "type": "dateTime",
+      "displayName": "Event Date",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "location": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Event Location",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 10,
+      "editorSettings": {}
+    },
+    "registrationLink": {
+      "type": "url",
+      "displayName": "Registration Link",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 20,
+      "editorSettings": {}
+    }
+  }
+}

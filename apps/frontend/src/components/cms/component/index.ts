@@ -1,6 +1,7 @@
 // Auto generated dictionary
 // @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
 import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
+import InformationCardComponent from "./informationCard";
 import WebsiteFooterComponent from "./WebsiteFooter";
 import TestimonialElementComponent from "./TestimonialElement";
 import ShortHeroComponent from "./ShortHero";
@@ -22,6 +23,10 @@ import ArticleListElementComponent from "./ArticleListElement";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
+    { 
+        type: "informationCard", 
+        component: InformationCardComponent 
+    },
     { 
         type: "WebsiteFooter", 
         component: WebsiteFooterComponent 

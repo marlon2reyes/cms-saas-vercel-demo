@@ -292,6 +292,15 @@ export const WebsiteFooterDataFragmentDoc = gql`
   }
 }
     `;
+export const informationCardDataFragmentDoc = gql`
+    fragment informationCardData on informationCard {
+  date
+  location
+  registrationLink {
+    ...LinkData
+  }
+}
+    `;
 export const BlankSectionDataFragmentDoc = gql`
     fragment BlankSectionData on BlankSection {
   _metadata {
@@ -322,6 +331,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...ShortHeroData
     ...TestimonialElementData
     ...WebsiteFooterData
+    ...informationCardData
     ...BlankSectionData
   }
 }
@@ -361,19 +371,8 @@ export const BlankExperienceDataFragmentDoc = gql`
   ...ExperienceData
 }
     `;
-export const ParagraphElementPropertyDataFragmentDoc = gql`
-    fragment ParagraphElementPropertyData on ParagraphElementProperty {
-  text {
-    json
-    html
-  }
-}
-    `;
 export const EventExperienceDataFragmentDoc = gql`
     fragment EventExperienceData on EventExperience {
-  title {
-    ...ParagraphElementPropertyData
-  }
   SeoSettings {
     ...PageSeoSettingsPropertyData
   }
@@ -410,6 +409,7 @@ export const ArticleGroupPageDataFragmentDoc = gql`
     ...ShortHeroData
     ...TestimonialElementData
     ...WebsiteFooterData
+    ...informationCardData
     ...BlankSectionData
   }
 }
@@ -586,6 +586,7 @@ export const getContentByIdDocument = gql`
       ...ShortHeroData
       ...TestimonialElementData
       ...WebsiteFooterData
+      ...informationCardData
       ...BlankSectionData
       ...BlankExperienceData
       ...EventExperienceData
@@ -625,6 +626,7 @@ ${ShortHeroDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${WebsiteFooterDataFragmentDoc}
 ${NavigationMenuBlockPropertyDataFragmentDoc}
+${informationCardDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${BlankExperienceDataFragmentDoc}
 ${PageSeoSettingsPropertyDataFragmentDoc}
@@ -634,7 +636,6 @@ ${CompositionComponentNodeDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${EventExperienceDataFragmentDoc}
-${ParagraphElementPropertyDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
 ${EventPageDataFragmentDoc}
@@ -694,9 +695,9 @@ ${ShortHeroDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${WebsiteFooterDataFragmentDoc}
 ${NavigationMenuBlockPropertyDataFragmentDoc}
+${informationCardDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${EventExperienceDataFragmentDoc}
-${ParagraphElementPropertyDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
 ${EventPageDataFragmentDoc}

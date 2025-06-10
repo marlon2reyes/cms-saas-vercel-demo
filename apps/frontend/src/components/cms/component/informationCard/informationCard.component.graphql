@@ -1,0 +1,5 @@
+fragment informationCardData on informationCard {
+  date
+  location
+  registrationLink { ...LinkData }
+}
