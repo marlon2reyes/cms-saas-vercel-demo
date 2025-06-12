@@ -6,30 +6,15 @@ import { InformationCardDataFragmentDoc, type InformationCardDataFragment } from
  * 
  */
 export const InformationCardComponent : CmsComponent<InformationCardDataFragment> = ({ data, children }) => {
-
-    return <div className="w-full flex justify-center">
-        <div className="w-1/2 border rounded-xl p-6 shadow-md backdrop-blur-sm bg-white/70">
-            <div className="grid grid-cols-2 gap-4">
-                <div>
-                    <p className="text-gray-700 font-medium">{data.location}</p>
-                </div>
-                <div className="flex flex-col space-y-2">
-                <p className="text-sm text-gray-600">{data.date}</p>
-                {data.registrationLink && (
-                    <a href={data.registrationLink.default ?? ""}
-                        className="text-blue-600 underline text-sm"
-                        target={"_self"}
-                        rel="noopener noreferrer"
-                    >
-                        {data.registrationText}
-                    </a>
-                )}
-                </div>
-            </div>
-        </div>
+    const componentName = 'Information Card Component'
+    const componentInfo = ''
+    return <div className="w-full border-y border-y-solid border-y-slate-900 py-2 mb-4">
+        <div className="font-bold italic">{ componentName }</div>
+        <div>{ componentInfo }</div>
+        { Object.getOwnPropertyNames(data).length > 0 && <pre className="w-full overflow-x-hidden font-mono text-sm bg-slate-200 p-2 rounded-sm border border-solid border-slate-900 text-slate-900">{ JSON.stringify(data, undefined, 4) }</pre> }
+        { children && <div className="mt-4 mx-4 flex flex-col">{ children }</div>}
     </div>
 }
-
 InformationCardComponent.displayName = "Information Card Component (Component/InformationCard)"
 InformationCardComponent.getDataFragment = () => ['InformationCardData', InformationCardDataFragmentDoc]
 
