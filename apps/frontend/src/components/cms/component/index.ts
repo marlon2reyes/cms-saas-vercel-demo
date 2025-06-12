@@ -10,7 +10,7 @@ import PageSeoSettingsComponent from "./PageSeoSettings";
 import OfficeLocationComponent from "./OfficeLocation";
 import NavigationMenuBlockComponent from "./NavigationMenuBlock";
 import MegaMenuGroupBlockComponent from "./MegaMenuGroupBlock";
-import InformationCardComponent from "./InformationCard";
+import InformationCardComponent from "@components/cms/component/InformationCard";
 import ImageElementComponent from "./ImageElement";
 import HeadingElementComponent from "./HeadingElement";
 import HeaderBlockComponent from "./HeaderBlock";
