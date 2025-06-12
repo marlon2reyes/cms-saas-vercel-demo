@@ -25,7 +25,7 @@ type Documents = {
     "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}": typeof types.HeaderBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": typeof types.HeadingElementDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": typeof types.ImageElementDataFragmentDoc,
-    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": typeof types.InformationCardDataFragmentDoc,
+    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    base\n    default\n  }\n  registrationText\n}": typeof types.InformationCardDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}": typeof types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": typeof types.NavigationMenuBlockDataFragmentDoc,
     "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": typeof types.NavigationMenuBlockPropertyDataFragmentDoc,
@@ -62,7 +62,7 @@ const documents: Documents = {
     "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}": types.HeaderBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": types.ImageElementDataFragmentDoc,
-    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": types.InformationCardDataFragmentDoc,
+    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    base\n    default\n  }\n  registrationText\n}": types.InformationCardDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}": types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockDataFragmentDoc,
     "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockPropertyDataFragmentDoc,
@@ -149,7 +149,7 @@ export function gql(source: "fragment ImageElementData on ImageElement {\n  altT
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"];
+export function gql(source: "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    base\n    default\n  }\n  registrationText\n}"): (typeof documents)["fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    base\n    default\n  }\n  registrationText\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

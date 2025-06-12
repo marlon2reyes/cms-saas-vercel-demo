@@ -187,8 +187,10 @@ export const InformationCardDataFragmentDoc = gql`
   date
   location
   registrationLink {
-    ...LinkData
+    base
+    default
   }
+  registrationText
 }
     `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`
