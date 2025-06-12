@@ -1,6 +1,0 @@
-fragment InformationCardData on InformationCard {
-  date
-  location
-  registrationText
-  registrationLink { ...LinkData }
-}

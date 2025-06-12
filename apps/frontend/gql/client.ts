@@ -182,13 +182,15 @@ export const ImageElementDataFragmentDoc = gql`
   }
 }
     `;
-export const InformationCardDataFragmentDoc = gql`
-    fragment InformationCardData on InformationCard {
+export const LocationCardDataFragmentDoc = gql`
+    fragment LocationCardData on LocationCard {
   date
   location
   registrationText
   registrationLink {
-    ...LinkData
+    base
+    default
+    graph
   }
 }
     `;
@@ -323,7 +325,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...HeaderBlockData
     ...HeadingElementData
     ...ImageElementData
-    ...InformationCardData
+    ...LocationCardData
     ...MegaMenuGroupBlockData
     ...NavigationMenuBlockData
     ...OfficeLocationData
@@ -401,7 +403,7 @@ export const ArticleGroupPageDataFragmentDoc = gql`
     ...HeaderBlockData
     ...HeadingElementData
     ...ImageElementData
-    ...InformationCardData
+    ...LocationCardData
     ...MegaMenuGroupBlockData
     ...NavigationMenuBlockData
     ...OfficeLocationData
@@ -578,7 +580,7 @@ export const getContentByIdDocument = gql`
       ...HeaderBlockData
       ...HeadingElementData
       ...ImageElementData
-      ...InformationCardData
+      ...LocationCardData
       ...MegaMenuGroupBlockData
       ...NavigationMenuBlockData
       ...OfficeLocationData
@@ -616,7 +618,7 @@ ${HeaderBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
-${InformationCardDataFragmentDoc}
+${LocationCardDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
@@ -685,7 +687,7 @@ ${HeaderBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
-${InformationCardDataFragmentDoc}
+${LocationCardDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}

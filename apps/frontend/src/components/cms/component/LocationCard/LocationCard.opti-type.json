@@ -1,6 +1,6 @@
 {
-  "key": "InformationCard",
-  "displayName": "Information Card Component",
+  "key": "LocationCard",
+  "displayName": "Location Card Component",
   "description": "",
   "baseType": "component",
   "sortOrder": 0,

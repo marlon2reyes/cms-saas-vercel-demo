@@ -1,12 +1,12 @@
 import { type CmsComponent } from "@remkoj/optimizely-cms-react";
-import { InformationCardDataFragmentDoc, type InformationCardDataFragment } from "@/gql/graphql";
+import { LocationCardDataFragmentDoc, type LocationCardDataFragment } from "@/gql/graphql";
 
 /**
- * Information Card Component
+ * Location Card Component
  * 
  */
-export const InformationCardComponent : CmsComponent<InformationCardDataFragment> = ({ data, children }) => {
-    const componentName = 'Information Card Component'
+export const LocationCardComponent : CmsComponent<LocationCardDataFragment> = ({ data, children }) => {
+    const componentName = 'Location Card Component'
     const componentInfo = ''
     return <div className="w-full border-y border-y-solid border-y-slate-900 py-2 mb-4">
         <div className="font-bold italic">{ componentName }</div>
@@ -15,7 +15,7 @@ export const InformationCardComponent : CmsComponent<InformationCardDataFragment
         { children && <div className="mt-4 mx-4 flex flex-col">{ children }</div>}
     </div>
 }
-InformationCardComponent.displayName = "Information Card Component (Component/InformationCard)"
-InformationCardComponent.getDataFragment = () => ['InformationCardData', InformationCardDataFragmentDoc]
+LocationCardComponent.displayName = "Location Card Component (Component/LocationCard)"
+LocationCardComponent.getDataFragment = () => ['LocationCardData', LocationCardDataFragmentDoc]
 
-export default InformationCardComponent
+export default LocationCardComponent

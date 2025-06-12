@@ -1,0 +1,10 @@
+fragment LocationCardData on LocationCard {
+  date
+  location
+  registrationText
+  registrationLink { 
+    base
+    default
+    graph
+  }
+}
