@@ -186,11 +186,10 @@ export const InformationCardDataFragmentDoc = gql`
     fragment InformationCardData on InformationCard {
   date
   location
-  registrationLink {
-    base
-    default
-  }
   registrationText
+  registrationLink {
+    ...LinkData
+  }
 }
     `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`

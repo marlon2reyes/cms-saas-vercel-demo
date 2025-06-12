@@ -31,6 +31,17 @@
       "sortOrder": 10,
       "editorSettings": {}
     },
+    "registrationText": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Registration Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 15,
+      "editorSettings": {}
+    },
     "registrationLink": {
       "type": "url",
       "displayName": "Registration Link",

@@ -1,9 +1,6 @@
 fragment InformationCardData on InformationCard {
   date
   location
-  registrationLink {
-    base
-    default
-  }
   registrationText
+  registrationLink { ...LinkData }
 }
