@@ -182,6 +182,15 @@ export const ImageElementDataFragmentDoc = gql`
   }
 }
     `;
+export const InformationCardDataFragmentDoc = gql`
+    fragment InformationCardData on InformationCard {
+  date
+  location
+  registrationLink {
+    ...LinkData
+  }
+}
+    `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`
     fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {
   MenuMenuHeading
@@ -292,15 +301,6 @@ export const WebsiteFooterDataFragmentDoc = gql`
   }
 }
     `;
-export const informationCardDataFragmentDoc = gql`
-    fragment informationCardData on informationCard {
-  date
-  location
-  registrationLink {
-    ...LinkData
-  }
-}
-    `;
 export const BlankSectionDataFragmentDoc = gql`
     fragment BlankSectionData on BlankSection {
   _metadata {
@@ -322,6 +322,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...HeaderBlockData
     ...HeadingElementData
     ...ImageElementData
+    ...InformationCardData
     ...MegaMenuGroupBlockData
     ...NavigationMenuBlockData
     ...OfficeLocationData
@@ -331,7 +332,6 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...ShortHeroData
     ...TestimonialElementData
     ...WebsiteFooterData
-    ...informationCardData
     ...BlankSectionData
   }
 }
@@ -400,6 +400,7 @@ export const ArticleGroupPageDataFragmentDoc = gql`
     ...HeaderBlockData
     ...HeadingElementData
     ...ImageElementData
+    ...InformationCardData
     ...MegaMenuGroupBlockData
     ...NavigationMenuBlockData
     ...OfficeLocationData
@@ -409,7 +410,6 @@ export const ArticleGroupPageDataFragmentDoc = gql`
     ...ShortHeroData
     ...TestimonialElementData
     ...WebsiteFooterData
-    ...informationCardData
     ...BlankSectionData
   }
 }
@@ -577,6 +577,7 @@ export const getContentByIdDocument = gql`
       ...HeaderBlockData
       ...HeadingElementData
       ...ImageElementData
+      ...InformationCardData
       ...MegaMenuGroupBlockData
       ...NavigationMenuBlockData
       ...OfficeLocationData
@@ -586,7 +587,6 @@ export const getContentByIdDocument = gql`
       ...ShortHeroData
       ...TestimonialElementData
       ...WebsiteFooterData
-      ...informationCardData
       ...BlankSectionData
       ...BlankExperienceData
       ...EventExperienceData
@@ -615,6 +615,7 @@ ${HeaderBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${InformationCardDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
@@ -626,7 +627,6 @@ ${ShortHeroDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${WebsiteFooterDataFragmentDoc}
 ${NavigationMenuBlockPropertyDataFragmentDoc}
-${informationCardDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${BlankExperienceDataFragmentDoc}
 ${PageSeoSettingsPropertyDataFragmentDoc}
@@ -684,6 +684,7 @@ ${HeaderBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${InformationCardDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
@@ -695,7 +696,6 @@ ${ShortHeroDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${WebsiteFooterDataFragmentDoc}
 ${NavigationMenuBlockPropertyDataFragmentDoc}
-${informationCardDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${EventExperienceDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}

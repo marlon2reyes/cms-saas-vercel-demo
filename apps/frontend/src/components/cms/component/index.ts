@@ -1,7 +1,6 @@
 // Auto generated dictionary
 // @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
 import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
-import InformationCardComponent from "./informationCard";
 import WebsiteFooterComponent from "./WebsiteFooter";
 import TestimonialElementComponent from "./TestimonialElement";
 import ShortHeroComponent from "./ShortHero";
@@ -11,6 +10,7 @@ import PageSeoSettingsComponent from "./PageSeoSettings";
 import OfficeLocationComponent from "./OfficeLocation";
 import NavigationMenuBlockComponent from "./NavigationMenuBlock";
 import MegaMenuGroupBlockComponent from "./MegaMenuGroupBlock";
+import InformationCardComponent from "./InformationCard";
 import ImageElementComponent from "./ImageElement";
 import HeadingElementComponent from "./HeadingElement";
 import HeaderBlockComponent from "./HeaderBlock";
@@ -23,10 +23,6 @@ import ArticleListElementComponent from "./ArticleListElement";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
-    { 
-        type: "informationCard", 
-        component: InformationCardComponent 
-    },
     { 
         type: "WebsiteFooter", 
         component: WebsiteFooterComponent 
@@ -62,6 +58,10 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "MegaMenuGroupBlock", 
         component: MegaMenuGroupBlockComponent 
+    },
+    { 
+        type: "InformationCard", 
+        component: InformationCardComponent 
     },
     { 
         type: "ImageElement", 

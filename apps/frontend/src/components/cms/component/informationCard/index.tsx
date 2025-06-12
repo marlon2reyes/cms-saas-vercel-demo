@@ -1,11 +1,11 @@
 import { type CmsComponent } from "@remkoj/optimizely-cms-react";
-import { informationCardDataFragmentDoc, type informationCardDataFragment } from "@/gql/graphql";
+import { InformationCardDataFragmentDoc, type InformationCardDataFragment } from "@/gql/graphql";
 
 /**
  * Information Card Component
  * 
  */
-export const informationCardComponent : CmsComponent<informationCardDataFragment> = ({ data, children }) => {
+export const InformationCardComponent : CmsComponent<InformationCardDataFragment> = ({ data, children }) => {
     const componentName = 'Information Card Component'
     const componentInfo = ''
     return <div className="w-full border-y border-y-solid border-y-slate-900 py-2 mb-4">
@@ -15,7 +15,7 @@ export const informationCardComponent : CmsComponent<informationCardDataFragment
         { children && <div className="mt-4 mx-4 flex flex-col">{ children }</div>}
     </div>
 }
-informationCardComponent.displayName = "Information Card Component (Component/informationCard)"
-informationCardComponent.getDataFragment = () => ['informationCardData', informationCardDataFragmentDoc]
+InformationCardComponent.displayName = "Information Card Component (Component/InformationCard)"
+InformationCardComponent.getDataFragment = () => ['InformationCardData', InformationCardDataFragmentDoc]
 
-export default informationCardComponent
+export default InformationCardComponent

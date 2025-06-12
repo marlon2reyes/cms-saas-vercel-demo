@@ -25,6 +25,7 @@ type Documents = {
     "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}": typeof types.HeaderBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": typeof types.HeadingElementDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": typeof types.ImageElementDataFragmentDoc,
+    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": typeof types.InformationCardDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}": typeof types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": typeof types.NavigationMenuBlockDataFragmentDoc,
     "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": typeof types.NavigationMenuBlockPropertyDataFragmentDoc,
@@ -36,7 +37,6 @@ type Documents = {
     "fragment ShortHeroData on ShortHero {\n  Title\n  Image {\n    ...ReferenceData\n  }\n}": typeof types.ShortHeroDataFragmentDoc,
     "fragment TestimonialElementData on TestimonialElement {\n  customerName\n  customerLocation\n  customerImage {\n    ...ReferenceData\n  }\n  referenceTitle\n  referenceText {\n    json\n  }\n}": typeof types.TestimonialElementDataFragmentDoc,
     "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}": typeof types.WebsiteFooterDataFragmentDoc,
-    "fragment informationCardData on informationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": typeof types.informationCardDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
     "fragment EventExperienceData on EventExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": typeof types.ArticleGroupPageDataFragmentDoc,
@@ -62,6 +62,7 @@ const documents: Documents = {
     "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}": types.HeaderBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": types.ImageElementDataFragmentDoc,
+    "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": types.InformationCardDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}": types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockDataFragmentDoc,
     "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockPropertyDataFragmentDoc,
@@ -73,7 +74,6 @@ const documents: Documents = {
     "fragment ShortHeroData on ShortHero {\n  Title\n  Image {\n    ...ReferenceData\n  }\n}": types.ShortHeroDataFragmentDoc,
     "fragment TestimonialElementData on TestimonialElement {\n  customerName\n  customerLocation\n  customerImage {\n    ...ReferenceData\n  }\n  referenceTitle\n  referenceText {\n    json\n  }\n}": types.TestimonialElementDataFragmentDoc,
     "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}": types.WebsiteFooterDataFragmentDoc,
-    "fragment informationCardData on informationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}": types.informationCardDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment EventExperienceData on EventExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
@@ -149,6 +149,10 @@ export function gql(source: "fragment ImageElementData on ImageElement {\n  altT
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment InformationCardData on InformationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}"): (typeof documents)["fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -190,10 +194,6 @@ export function gql(source: "fragment TestimonialElementData on TestimonialEleme
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}"): (typeof documents)["fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "fragment informationCardData on informationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment informationCardData on informationCard {\n  date\n  location\n  registrationLink {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

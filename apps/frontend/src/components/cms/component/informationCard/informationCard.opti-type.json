@@ -1,5 +1,5 @@
 {
-  "key": "informationCard",
+  "key": "InformationCard",
   "displayName": "Information Card Component",
   "description": "",
   "baseType": "component",
