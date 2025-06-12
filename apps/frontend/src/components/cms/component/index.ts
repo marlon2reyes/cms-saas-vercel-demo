@@ -10,6 +10,7 @@ import PageSeoSettingsComponent from "./PageSeoSettings";
 import OfficeLocationComponent from "./OfficeLocation";
 import NavigationMenuBlockComponent from "./NavigationMenuBlock";
 import MegaMenuGroupBlockComponent from "./MegaMenuGroupBlock";
+import InformationCardComponent from "./InformationCard";
 import ImageElementComponent from "./ImageElement";
 import HeadingElementComponent from "./HeadingElement";
 import HeaderBlockComponent from "./HeaderBlock";
@@ -57,6 +58,10 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "MegaMenuGroupBlock", 
         component: MegaMenuGroupBlockComponent 
+    },
+    { 
+        type: "InformationCard", 
+        component: InformationCardComponent 
     },
     { 
         type: "ImageElement", 
