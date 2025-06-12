@@ -10,7 +10,6 @@ import PageSeoSettingsComponent from "./PageSeoSettings";
 import OfficeLocationComponent from "./OfficeLocation";
 import NavigationMenuBlockComponent from "./NavigationMenuBlock";
 import MegaMenuGroupBlockComponent from "./MegaMenuGroupBlock";
-import InformationCardComponent from "./InformationCard";
 import ImageElementComponent from "./ImageElement";
 import HeadingElementComponent from "./HeadingElement";
 import HeaderBlockComponent from "./HeaderBlock";
@@ -20,6 +19,7 @@ import CardBlockComponent from "./CardBlock";
 import CTAElementComponent from "./CTAElement";
 import ButtonBlockComponent from "./ButtonBlock";
 import ArticleListElementComponent from "./ArticleListElement";
+import InformationCardComponent from "./InformationCard";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
