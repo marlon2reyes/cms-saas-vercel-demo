@@ -19,7 +19,6 @@ import CardBlockComponent from "./CardBlock";
 import CTAElementComponent from "./CTAElement";
 import ButtonBlockComponent from "./ButtonBlock";
 import ArticleListElementComponent from "./ArticleListElement";
-import InformationCardComponent from "./InformationCard";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
@@ -58,10 +57,6 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "MegaMenuGroupBlock", 
         component: MegaMenuGroupBlockComponent 
-    },
-    { 
-        type: "InformationCard", 
-        component: InformationCardComponent 
     },
     { 
         type: "ImageElement", 
