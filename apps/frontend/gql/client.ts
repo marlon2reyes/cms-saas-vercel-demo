@@ -82,10 +82,11 @@ export const ButtonBlockDataFragmentDoc = gql`
     `;
 export const CTAElementDataFragmentDoc = gql`
     fragment CTAElementData on CTAElement {
-  cta_text: Text
-  cta_link: Link {
+  Link {
     ...LinkData
   }
+  Text
+  cta_type
 }
     `;
 export const ButtonBlockPropertyDataFragmentDoc = gql`
@@ -417,8 +418,43 @@ export const ArticleGroupPageDataFragmentDoc = gql`
   }
 }
     `;
+export const CTAElementPropertyDataFragmentDoc = gql`
+    fragment CTAElementPropertyData on CTAElementProperty {
+  Link {
+    ...LinkData
+  }
+  Text
+  cta_type
+}
+    `;
 export const ArticlePageDataFragmentDoc = gql`
     fragment ArticlePageData on ArticlePage {
+  link_navigation {
+    ...BlockData
+    ...ArticleListElementData
+    ...ButtonBlockData
+    ...CTAElementData
+    ...CardBlockData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...HeaderBlockData
+    ...HeadingElementData
+    ...ImageElementData
+    ...LocationCardData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...PromoHeroData
+    ...ShortHeroData
+    ...TestimonialElementData
+    ...WebsiteFooterData
+    ...BlankSectionData
+  }
+  Link_navigation_field {
+    ...CTAElementPropertyData
+  }
   articleSeoSettings {
     ...PageSeoSettingsPropertyData
   }
@@ -641,6 +677,7 @@ ${IElementDataFragmentDoc}
 ${EventExperienceDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
+${CTAElementPropertyDataFragmentDoc}
 ${EventPageDataFragmentDoc}
 ${TestingPageDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
@@ -703,6 +740,7 @@ ${BlankSectionDataFragmentDoc}
 ${EventExperienceDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}
+${CTAElementPropertyDataFragmentDoc}
 ${EventPageDataFragmentDoc}
 ${TestingPageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`

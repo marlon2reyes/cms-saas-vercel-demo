@@ -1,0 +1,5 @@
+fragment CTAElementPropertyData on CTAElementProperty {
+  Link { ...LinkData }
+  Text
+  cta_type
+}

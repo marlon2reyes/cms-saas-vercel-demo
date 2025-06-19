@@ -1,4 +1,6 @@
 fragment ArticlePageData on ArticlePage {
+  link_navigation { ...BlockData }
+  Link_navigation_field { ...CTAElementPropertyData }
   articleSeoSettings { ...PageSeoSettingsPropertyData }
   articleHeroImage { ...ReferenceData }
   articleSummary { json, html }
