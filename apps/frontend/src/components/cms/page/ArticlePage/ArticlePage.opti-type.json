@@ -5,11 +5,59 @@
   "baseType": "page",
   "sortOrder": 100,
   "mayContainTypes": [
-    "TestingPage"
+    "TestingPage",
+    "EventPage"
   ],
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
   "properties": {
+    "articleTitle": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Title",
+      "description": "",
+      "localized": true,
+      "required": true,
+      "group": "Information",
+      "sortOrder": -100,
+      "editorSettings": {}
+    },
+    "articleHeroImage": {
+      "type": "contentReference",
+      "displayName": "Hero Image",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": -50,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Image"
+      ],
+      "restrictedTypes": []
+    },
+    "Link_navigation_field": {
+      "type": "component",
+      "contentType": "CTAElement",
+      "displayName": "Link_navigation_field",
+      "description": "Link field to redirect to another page",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "Button": {
+      "type": "component",
+      "contentType": "ButtonBlock",
+      "displayName": "Button",
+      "description": "simple button to trigger an action",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
     "articleSeoSettings": {
       "type": "component",
       "contentType": "PageSeoSettings",
@@ -20,18 +68,6 @@
       "group": "SeoData",
       "sortOrder": 10,
       "editorSettings": {}
-    },
-    "articleHeroImage": {
-      "type": "contentReference",
-      "displayName": "Hero Image",
-      "description": "",
-      "localized": false,
-      "required": false,
-      "group": "Information",
-      "sortOrder": 10,
-      "editorSettings": {},
-      "allowedTypes": [],
-      "restrictedTypes": []
     },
     "articleSummary": {
       "type": "string",
@@ -44,31 +80,6 @@
       "sortOrder": 10,
       "editorSettings": {}
     },
-    "articleTitle": {
-      "type": "string",
-      "format": "shortString",
-      "displayName": "Title",
-      "description": "",
-      "localized": true,
-      "required": true,
-      "group": "Information",
-      "sortOrder": 20,
-      "editorSettings": {}
-    },
-    "articleAuthors": {
-      "type": "array",
-      "displayName": "Author(s)",
-      "description": "",
-      "localized": false,
-      "required": true,
-      "group": "Information",
-      "sortOrder": 30,
-      "editorSettings": {},
-      "items": {
-        "type": "string",
-        "format": "shortString"
-      }
-    },
     "articleBody": {
       "type": "string",
       "format": "html",
@@ -79,6 +90,20 @@
       "group": "Information",
       "sortOrder": 40,
       "editorSettings": {}
+    },
+    "articleAuthors": {
+      "type": "array",
+      "displayName": "Author(s)",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Information",
+      "sortOrder": 140,
+      "editorSettings": {},
+      "items": {
+        "type": "string",
+        "format": "shortString"
+      }
     }
   }
 }

@@ -1,7 +1,5 @@
 fragment ButtonBlockData on ButtonBlock {
-  RichText: text
-  link { ...LinkData }
+  textContent: text
   className
   buttonType
-  variant
 }

@@ -15,8 +15,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 type Documents = {
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": typeof types.ArticleListElementDataFragmentDoc,
-    "fragment ButtonBlockData on ButtonBlock {\n  RichText: text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": typeof types.ButtonBlockDataFragmentDoc,
-    "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": typeof types.ButtonBlockPropertyDataFragmentDoc,
+    "fragment ButtonBlockData on ButtonBlock {\n  textContent: text\n  className\n  buttonType\n}": typeof types.ButtonBlockDataFragmentDoc,
+    "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  textContent: text\n  className\n  buttonType\n}": typeof types.ButtonBlockPropertyDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  Link {\n    ...LinkData\n  }\n  Text\n  cta_type\n}": typeof types.CTAElementDataFragmentDoc,
     "fragment CTAElementPropertyData on CTAElementProperty {\n  Link {\n    ...LinkData\n  }\n  Text\n  cta_type\n}": typeof types.CTAElementPropertyDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  CardHeading\n  CardSubheading\n  CardDescription {\n    json\n    html\n  }\n  CardColor\n  CardButton {\n    ...ButtonBlockPropertyData\n  }\n  CardIcon {\n    ...ReferenceData\n  }\n  CardImage {\n    ...ReferenceData\n  }\n  CardImageLayout\n}": typeof types.CardBlockDataFragmentDoc,
@@ -41,7 +41,7 @@ type Documents = {
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
     "fragment EventExperienceData on EventExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": typeof types.ArticleGroupPageDataFragmentDoc,
-    "fragment ArticlePageData on ArticlePage {\n  link_navigation {\n    ...BlockData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": typeof types.ArticlePageDataFragmentDoc,
+    "fragment ArticlePageData on ArticlePage {\n  articleTitle\n  articleHeroImage {\n    ...ReferenceData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  Button {\n    ...ButtonBlockPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleBody {\n    json\n    html\n  }\n  articleAuthors\n}": typeof types.ArticlePageDataFragmentDoc,
     "fragment EventPageData on EventPage {\n  Title\n}": typeof types.EventPageDataFragmentDoc,
     "fragment TestingPageData on TestingPage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": typeof types.TestingPageDataFragmentDoc,
     "fragment BlankSectionData on BlankSection {\n  _metadata {\n    key\n  }\n}": typeof types.BlankSectionDataFragmentDoc,
@@ -53,8 +53,8 @@ type Documents = {
 };
 const documents: Documents = {
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
-    "fragment ButtonBlockData on ButtonBlock {\n  RichText: text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockDataFragmentDoc,
-    "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockPropertyDataFragmentDoc,
+    "fragment ButtonBlockData on ButtonBlock {\n  textContent: text\n  className\n  buttonType\n}": types.ButtonBlockDataFragmentDoc,
+    "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  textContent: text\n  className\n  buttonType\n}": types.ButtonBlockPropertyDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  Link {\n    ...LinkData\n  }\n  Text\n  cta_type\n}": types.CTAElementDataFragmentDoc,
     "fragment CTAElementPropertyData on CTAElementProperty {\n  Link {\n    ...LinkData\n  }\n  Text\n  cta_type\n}": types.CTAElementPropertyDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  CardHeading\n  CardSubheading\n  CardDescription {\n    json\n    html\n  }\n  CardColor\n  CardButton {\n    ...ButtonBlockPropertyData\n  }\n  CardIcon {\n    ...ReferenceData\n  }\n  CardImage {\n    ...ReferenceData\n  }\n  CardImageLayout\n}": types.CardBlockDataFragmentDoc,
@@ -79,7 +79,7 @@ const documents: Documents = {
     "fragment BlankExperienceData on BlankExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment EventExperienceData on EventExperience {\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.EventExperienceDataFragmentDoc,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
-    "fragment ArticlePageData on ArticlePage {\n  link_navigation {\n    ...BlockData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.ArticlePageDataFragmentDoc,
+    "fragment ArticlePageData on ArticlePage {\n  articleTitle\n  articleHeroImage {\n    ...ReferenceData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  Button {\n    ...ButtonBlockPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleBody {\n    json\n    html\n  }\n  articleAuthors\n}": types.ArticlePageDataFragmentDoc,
     "fragment EventPageData on EventPage {\n  Title\n}": types.EventPageDataFragmentDoc,
     "fragment TestingPageData on TestingPage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.TestingPageDataFragmentDoc,
     "fragment BlankSectionData on BlankSection {\n  _metadata {\n    key\n  }\n}": types.BlankSectionDataFragmentDoc,
@@ -111,11 +111,11 @@ export function gql(source: "fragment ArticleListElementData on ArticleListEleme
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment ButtonBlockData on ButtonBlock {\n  RichText: text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"): (typeof documents)["fragment ButtonBlockData on ButtonBlock {\n  RichText: text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"];
+export function gql(source: "fragment ButtonBlockData on ButtonBlock {\n  textContent: text\n  className\n  buttonType\n}"): (typeof documents)["fragment ButtonBlockData on ButtonBlock {\n  textContent: text\n  className\n  buttonType\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"): (typeof documents)["fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"];
+export function gql(source: "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  textContent: text\n  className\n  buttonType\n}"): (typeof documents)["fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  textContent: text\n  className\n  buttonType\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -215,7 +215,7 @@ export function gql(source: "fragment ArticleGroupPageData on ArticleGroupPage {
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment ArticlePageData on ArticlePage {\n  link_navigation {\n    ...BlockData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ArticlePageData on ArticlePage {\n  link_navigation {\n    ...BlockData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"];
+export function gql(source: "fragment ArticlePageData on ArticlePage {\n  articleTitle\n  articleHeroImage {\n    ...ReferenceData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  Button {\n    ...ButtonBlockPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleBody {\n    json\n    html\n  }\n  articleAuthors\n}"): (typeof documents)["fragment ArticlePageData on ArticlePage {\n  articleTitle\n  articleHeroImage {\n    ...ReferenceData\n  }\n  Link_navigation_field {\n    ...CTAElementPropertyData\n  }\n  Button {\n    ...ButtonBlockPropertyData\n  }\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleBody {\n    json\n    html\n  }\n  articleAuthors\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

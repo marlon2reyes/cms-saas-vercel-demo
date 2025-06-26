@@ -1,10 +1,10 @@
 fragment ArticlePageData on ArticlePage {
-  link_navigation { ...BlockData }
-  Link_navigation_field { ...CTAElementPropertyData }
-  articleSeoSettings { ...PageSeoSettingsPropertyData }
-  articleHeroImage { ...ReferenceData }
-  articleSummary { json, html }
   articleTitle
-  articleAuthors
+  articleHeroImage { ...ReferenceData }
+  Link_navigation_field { ...CTAElementPropertyData }
+  Button { ...ButtonBlockPropertyData }
+  articleSeoSettings { ...PageSeoSettingsPropertyData }
+  articleSummary { json, html }
   articleBody { json, html }
+  articleAuthors
 }

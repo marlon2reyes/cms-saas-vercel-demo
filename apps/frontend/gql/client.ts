@@ -71,13 +71,9 @@ export const ArticleListElementDataFragmentDoc = gql`
     `;
 export const ButtonBlockDataFragmentDoc = gql`
     fragment ButtonBlockData on ButtonBlock {
-  RichText: text
-  link {
-    ...LinkData
-  }
+  textContent: text
   className
   buttonType
-  variant
 }
     `;
 export const CTAElementDataFragmentDoc = gql`
@@ -91,13 +87,9 @@ export const CTAElementDataFragmentDoc = gql`
     `;
 export const ButtonBlockPropertyDataFragmentDoc = gql`
     fragment ButtonBlockPropertyData on ButtonBlockProperty {
-  text
-  link {
-    ...LinkData
-  }
+  textContent: text
   className
   buttonType
-  variant
 }
     `;
 export const ReferenceDataFragmentDoc = gql`
@@ -429,48 +421,28 @@ export const CTAElementPropertyDataFragmentDoc = gql`
     `;
 export const ArticlePageDataFragmentDoc = gql`
     fragment ArticlePageData on ArticlePage {
-  link_navigation {
-    ...BlockData
-    ...ArticleListElementData
-    ...ButtonBlockData
-    ...CTAElementData
-    ...CardBlockData
-    ...DictionaryData
-    ...DictionaryItemData
-    ...HeaderBlockData
-    ...HeadingElementData
-    ...ImageElementData
-    ...LocationCardData
-    ...MegaMenuGroupBlockData
-    ...NavigationMenuBlockData
-    ...OfficeLocationData
-    ...PageSeoSettingsData
-    ...ParagraphElementData
-    ...PromoHeroData
-    ...ShortHeroData
-    ...TestimonialElementData
-    ...WebsiteFooterData
-    ...BlankSectionData
+  articleTitle
+  articleHeroImage {
+    ...ReferenceData
   }
   Link_navigation_field {
     ...CTAElementPropertyData
   }
+  Button {
+    ...ButtonBlockPropertyData
+  }
   articleSeoSettings {
     ...PageSeoSettingsPropertyData
-  }
-  articleHeroImage {
-    ...ReferenceData
   }
   articleSummary {
     json
     html
   }
-  articleTitle
-  articleAuthors
   articleBody {
     json
     html
   }
+  articleAuthors
 }
     `;
 export const EventPageDataFragmentDoc = gql`

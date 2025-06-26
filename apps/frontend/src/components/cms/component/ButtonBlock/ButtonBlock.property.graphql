@@ -1,7 +1,5 @@
 fragment ButtonBlockPropertyData on ButtonBlockProperty {
-  text
-  link { ...LinkData }
+  textContent: text
   className
   buttonType
-  variant
 }

@@ -10,18 +10,7 @@
   "properties": {
     "text": {
       "type": "string",
-      "format": "shortString",
       "displayName": "Text",
-      "description": "",
-      "localized": false,
-      "required": false,
-      "group": "Information",
-      "sortOrder": 0,
-      "editorSettings": {}
-    },
-    "link": {
-      "type": "url",
-      "displayName": "Link",
       "description": "",
       "localized": false,
       "required": false,
@@ -53,26 +42,51 @@
       "enum": {
         "values": [
           {
-            "displayName": "Primary",
-            "value": "primary"
+            "displayName": "PrimaryDark",
+            "value": "cta-1"
           },
           {
-            "displayName": "Secondary",
-            "value": "secondary"
+            "displayName": "SecondaryDark",
+            "value": "cta-2"
+          },
+          {
+            "displayName": "TertiaryLight",
+            "value": "cta-3"
+          },
+          {
+            "displayName": "cta-4",
+            "value": "cta-4"
+          },
+          {
+            "displayName": "cta-7",
+            "value": "cta-7"
+          },
+          {
+            "displayName": "PrimaryLight",
+            "value": "cta-6"
+          },
+          {
+            "displayName": "SecondaryLight",
+            "value": "cta-5"
+          },
+          {
+            "displayName": "TertiaryDark",
+            "value": "cta-3-inv"
+          },
+          {
+            "displayName": "ArrowLight",
+            "value": "cta-8"
+          },
+          {
+            "displayName": "ArrowDark",
+            "value": "cta-9"
+          },
+          {
+            "displayName": "PrimaryBlue",
+            "value": "cta-11"
           }
         ]
       }
-    },
-    "variant": {
-      "type": "string",
-      "format": "selectOne",
-      "displayName": "Variant",
-      "description": "",
-      "localized": false,
-      "required": false,
-      "group": "RenderSettings",
-      "sortOrder": 200,
-      "editorSettings": {}
     }
   }
 }
