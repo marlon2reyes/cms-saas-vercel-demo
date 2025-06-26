@@ -31,7 +31,7 @@ const DurationValues : CTAValueMap<"duration", number> = {
     verylong: 2,
 }
 
-export const AnimatedCTAElement : CTAElementAnimatedStylesComponent<CTAElementDataFragment> = ({ data: { cta_link: link, cta_text: text }, layoutProps, className, ...containerProps }) => {
+export const AnimatedCTAElement : CTAElementAnimatedStylesComponent<CTAElementDataFragment> = ({ data, layoutProps, className, ...containerProps }) => {
     // Extract the actual layout properties and apply defaults
     const { 
         buttonAlign = "auto", 
@@ -48,7 +48,7 @@ export const AnimatedCTAElement : CTAElementAnimatedStylesComponent<CTAElementDa
     
     
     return <Animate initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: animDuration, delay: animDelay }} className='relative w-full'>
-        <Button href={link} className={ cssClasses.join(' ') } text={text} buttonType={buttonType} buttonVariant={buttonVariant} { ...containerProps } />
+        <Button href={data.Link} className={ cssClasses.join(' ') } text={data.Text} buttonType={buttonType} buttonVariant={buttonVariant} { ...containerProps } />
     </Animate>
 }
 
